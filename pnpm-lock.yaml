@@ -643,12 +643,6 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2.108.2
         version: 2.108.2
-      '@types/pg':
-        specifier: ^8.20.0
-        version: 8.20.0
-      pg:
-        specifier: ^8.20.0
-        version: 8.20.0
     devDependencies:
       '@types/node':
         specifier: 'catalog:'

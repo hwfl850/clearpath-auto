@@ -6,7 +6,6 @@
   "scripts": {
     "hello": "tsx ./src/hello.ts",
     "seed-vehicles": "tsx ./src/seed-vehicles.ts",
-    "create-vehicles-table": "tsx ./src/create-vehicles-table.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
@@ -14,8 +13,6 @@
     "tsx": "catalog:"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.108.2",
-    "@types/pg": "^8.20.0",
-    "pg": "^8.20.0"
+    "@supabase/supabase-js": "^2.108.2"
   }
 }
