@@ -5,14 +5,13 @@ import { Search, X, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SkeletonCard } from "@/components/SkeletonCard";
-import { fetchVehicles, vehicleFullName, formatPrice, type Vehicle } from "@/lib/vehiclesApi";
+import { fetchVehicles, vehicleFullName, type Vehicle } from "@/lib/vehiclesApi";
 
 type Category = "All" | "Truck" | "SUV" | "Car";
 const CATEGORIES: Category[] = ["All", "Truck", "SUV", "Car"];
 
 function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   const fullName = vehicleFullName(vehicle);
-  const savings = vehicle.msrp && vehicle.our_price ? vehicle.msrp - vehicle.our_price : null;
 
   return (
     <motion.div
@@ -37,11 +36,9 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
         <span className="absolute top-3 left-3 bg-secondary text-secondary-foreground text-[10px] font-bold uppercase tracking-widest px-2 py-1">
           {vehicle.category}
         </span>
-        {savings && savings > 0 && (
-          <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-2 py-1">
-            Save {formatPrice(savings)}
-          </span>
-        )}
+        <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-2 py-1">
+          Below MSRP
+        </span>
       </div>
 
       <div className="p-5 flex flex-col flex-1">
@@ -68,19 +65,10 @@ function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
           </div>
         )}
 
-        <div className="mt-auto pt-4 border-t border-border flex items-end justify-between gap-3">
-          <div>
-            {vehicle.msrp && (
-              <p className="text-xs text-muted-foreground line-through">
-                MSRP {formatPrice(vehicle.msrp)}
-              </p>
-            )}
-            {vehicle.our_price && (
-              <p className="text-xl font-bold text-primary">
-                {formatPrice(vehicle.our_price)}
-              </p>
-            )}
-          </div>
+        <div className="mt-auto pt-4 border-t border-border flex items-center justify-between gap-3">
+          <span className="text-sm font-semibold text-primary">
+            Priced below MSRP
+          </span>
           <Link href={`/request?model=${vehicle.slug}`}>
             <Button
               size="sm"
@@ -142,12 +130,11 @@ export default function Vehicles() {
         <title>Browse Vehicles | ClearPath Auto</title>
         <meta
           name="description"
-          content="Browse every truck and SUV we source and deliver nationwide — full model names, real pricing, no haggling."
+          content="Browse every truck and SUV we source and deliver nationwide — full model names, priced below MSRP, no haggling."
         />
       </Helmet>
 
       <div className="flex flex-col w-full min-h-screen bg-background">
-        {/* Page header with integrated search */}
         <div className="bg-secondary text-secondary-foreground pt-14 pb-10">
           <div className="container mx-auto px-4 md:px-6">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
@@ -179,7 +166,6 @@ export default function Vehicles() {
           </div>
         </div>
 
-        {/* Filter tabs + count */}
         <div className="border-b border-border bg-muted/40 sticky top-16 z-30">
           <div className="container mx-auto px-4 md:px-6 flex items-center justify-between gap-6 overflow-x-auto">
             <div className="flex items-center gap-1 py-3">
@@ -212,7 +198,6 @@ export default function Vehicles() {
           </div>
         </div>
 
-        {/* Vehicle grid */}
         <div className="container mx-auto px-4 md:px-6 py-10">
           {loading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -243,7 +228,6 @@ export default function Vehicles() {
           )}
         </div>
 
-        {/* Bottom CTA */}
         {!loading && (
           <div className="bg-secondary text-secondary-foreground py-16 text-center mt-auto">
             <div className="container mx-auto px-4">

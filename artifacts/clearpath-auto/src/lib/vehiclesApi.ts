@@ -8,8 +8,6 @@ export interface Vehicle {
   year: number;
   trim: string | null;
   category: "Truck" | "SUV" | "Car";
-  msrp: number | null;
-  our_price: number | null;
   tagline: string | null;
   description: string | null;
   image_url: string | null;
@@ -24,14 +22,6 @@ export function vehicleFullName(v: Vehicle): string {
   return `${v.year} ${v.make} ${v.model}${v.trim ? " " + v.trim : ""}`;
 }
 
-export function formatPrice(n: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(n);
-}
-
 const FALLBACK_VEHICLES: Vehicle[] = [
   {
     id: "1",
@@ -41,8 +31,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Rubicon",
     category: "SUV",
-    msrp: 57995,
-    our_price: 53500,
     tagline: "The icon that never compromises",
     description:
       "The Jeep Wrangler Rubicon is the definitive off-road SUV — Trail-Rated, capable, and instantly recognizable. We source it below sticker and deliver it anywhere in the country.",
@@ -66,8 +54,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Mojave",
     category: "Truck",
-    msrp: 53495,
-    our_price: 49900,
     tagline: "The only truck that's Trail-Rated",
     description:
       "Part Wrangler, all truck. The Jeep Gladiator Mojave pairs legendary Jeep DNA with a real cargo bed — and we'll put it in your driveway for less than the sticker.",
@@ -91,8 +77,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Summit Reserve",
     category: "SUV",
-    msrp: 62995,
-    our_price: 58500,
     tagline: "Premium meets unstoppable",
     description:
       "The Grand Cherokee Summit Reserve is Jeep's most refined SUV yet — available as a plug-in hybrid and packed with luxury features that cost far less when you go through ClearPath.",
@@ -116,8 +100,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "TRX",
     category: "Truck",
-    msrp: 86995,
-    our_price: 81500,
     tagline: "The most powerful production truck on earth",
     description:
       "702 horsepower. 0–60 in 4.5 seconds. The Ram 1500 TRX is the desert-dominating super truck that redefines what a pickup can do. We source it at real pricing and deliver nationwide.",
@@ -141,8 +123,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Badlands",
     category: "SUV",
-    msrp: 54995,
-    our_price: 51200,
     tagline: "Built wild. Delivered to your door.",
     description:
       "The Ford Bronco Badlands was born to go anywhere — removable doors and top, Sasquatch-package ready, and available in 2- or 4-door. We put it in your driveway at a price the dealer can't advertise.",
@@ -166,8 +146,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Raptor",
     category: "Truck",
-    msrp: 74995,
-    our_price: 70500,
     tagline: "America's best-selling truck, at our price",
     description:
       "The Ford F-150 Raptor is the high-performance off-road truck that's dominated the segment for years. Fox Racing shocks, 450 hp, and a presence that commands every road.",
@@ -191,8 +169,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Lariat",
     category: "Truck",
-    msrp: 36995,
-    our_price: 34200,
     tagline: "The compact truck that punches way above",
     description:
       "The Ford Maverick Lariat is the smart-sized, fuel-efficient pickup that's earned a cult following. Standard hybrid on base, remarkable value at every trim — and we deliver it anywhere.",
@@ -216,8 +192,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Black Label",
     category: "SUV",
-    msrp: 112995,
-    our_price: 106500,
     tagline: "Full-size luxury at its absolute pinnacle",
     description:
       "The Lincoln Navigator Black Label is the definitive American luxury SUV — three rows, massaging seats, panoramic roof, and enough presence to own any entrance. Nationwide delivery, real pricing.",
@@ -241,8 +215,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "Grand Touring",
     category: "SUV",
-    msrp: 72995,
-    our_price: 68500,
     tagline: "Midsize luxury with a turbocharged heart",
     description:
       "The Lincoln Aviator Grand Touring delivers plug-in hybrid efficiency wrapped in a genuinely beautiful three-row SUV. Available below sticker via ClearPath with delivery anywhere in the US.",
@@ -266,8 +238,6 @@ const FALLBACK_VEHICLES: Vehicle[] = [
     year: 2025,
     trim: "S Hardtop 4-Door",
     category: "Car",
-    msrp: 33995,
-    our_price: 31500,
     tagline: "Go-kart soul, grown-up practicality",
     description:
       "The MINI Cooper S 4-Door is the perfectly sized car that refuses to be ordinary. 189 hp, razor-sharp handling, and a character that's impossible to ignore — delivered to your door below MSRP.",
