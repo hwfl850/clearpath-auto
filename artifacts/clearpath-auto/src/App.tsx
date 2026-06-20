@@ -6,7 +6,6 @@ import NotFound from "@/pages/not-found";
 
 import { Layout } from "@/components/layout/Layout";
 import Home from "@/pages/Home";
-import Models from "@/pages/Models";
 import Vehicles from "@/pages/Vehicles";
 import HowItWorks from "@/pages/HowItWorks";
 import Request from "@/pages/Request";
@@ -19,7 +18,6 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/vehicles" component={Vehicles} />
-        <Route path="/models" component={Models} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/request" component={Request} />
         <Route component={NotFound} />

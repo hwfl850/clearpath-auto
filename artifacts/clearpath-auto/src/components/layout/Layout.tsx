@@ -20,9 +20,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/vehicles" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-vehicles">
               Browse Vehicles
             </Link>
-            <Link href="/models" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-models">
-              Featured Models
-            </Link>
             <Link href="/how-it-works" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-how-it-works">
               How it Works
             </Link>
@@ -49,9 +46,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="md:hidden border-t border-border bg-background px-4 py-6 flex flex-col gap-4">
             <Link href="/vehicles" className="font-medium hover:text-primary transition-colors py-1" onClick={() => setMobileOpen(false)} data-testid="link-mobile-vehicles">
               Browse Vehicles
-            </Link>
-            <Link href="/models" className="font-medium hover:text-primary transition-colors py-1" onClick={() => setMobileOpen(false)} data-testid="link-mobile-models">
-              Featured Models
             </Link>
             <Link href="/how-it-works" className="font-medium hover:text-primary transition-colors py-1" onClick={() => setMobileOpen(false)} data-testid="link-mobile-how">
               How it Works
@@ -86,7 +80,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-bold uppercase tracking-wider mb-4 text-sm text-primary">Links</h4>
               <ul className="space-y-3">
                 <li><Link href="/vehicles" className="text-muted-foreground hover:text-white transition-colors text-sm">Browse Vehicles</Link></li>
-                <li><Link href="/models" className="text-muted-foreground hover:text-white transition-colors text-sm">Featured Models</Link></li>
                 <li><Link href="/how-it-works" className="text-muted-foreground hover:text-white transition-colors text-sm">How it Works</Link></li>
                 <li><Link href="/request" className="text-muted-foreground hover:text-white transition-colors text-sm">Request a Price</Link></li>
               </ul>
