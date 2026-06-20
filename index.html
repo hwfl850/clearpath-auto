@@ -14,7 +14,7 @@
         if (search && search.indexOf('?/') === 0) {
           var decoded = search.slice(2).replace(/~and~/g, '&');
           history.replaceState(null, null,
-            location.pathname + (decoded ? '/' + decoded : '') + location.hash);
+            location.pathname + decoded + location.hash);
         }
       })();
     </script>
