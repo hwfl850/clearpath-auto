@@ -1,0 +1,62 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "03w7P0ukDIXLSv5QulJhN"
+uri = "file://attached_assets/vehicles/jeep-wrangler.jpg"
+type = "image"
+title = "Jeep Wrangler outdoors"
+
+[[outputs]]
+id = "JgCkarwN8qipQcIJasciN"
+uri = "file://attached_assets/vehicles/jeep-gladiator.jpg"
+type = "image"
+title = "Jeep Gladiator truck"
+
+[[outputs]]
+id = "FOiioJSv0HjgB9bypecUd"
+uri = "file://attached_assets/vehicles/jeep-grand-cherokee.jpg"
+type = "image"
+title = "Jeep Grand Cherokee SUV"
+
+[[outputs]]
+id = "hAv2fH86_tuJqJuIPJbKm"
+uri = "file://attached_assets/vehicles/ram-1500.jpg"
+type = "image"
+title = "Ram 1500 truck"
+
+[[outputs]]
+id = "AtQN8JhcYZSoapl_pC6VX"
+uri = "file://attached_assets/vehicles/ford-bronco.jpg"
+type = "image"
+title = "Ford Bronco offroad"
+
+[[outputs]]
+id = "qAgk8mhXCwddW1eHqv_c9"
+uri = "file://attached_assets/vehicles/ford-f150.jpg"
+type = "image"
+title = "Ford F-150 truck"
+
+[[outputs]]
+id = "VNF13rWKBJSXPyP-cOf2l"
+uri = "file://attached_assets/vehicles/ford-maverick.jpg"
+type = "image"
+title = "Ford Maverick truck"
+
+[[outputs]]
+id = "HvdJs0SPvKknae2JQCuvn"
+uri = "file://attached_assets/vehicles/mini-cooper.jpg"
+type = "image"
+title = "MINI Cooper car"
+
+[[outputs]]
+id = "HGbkzSw4qBX9JzMeHyIvR"
+uri = "file://attached_assets/vehicles/lincoln-navigator.jpg"
+type = "image"
+title = "Lincoln Navigator luxury SUV"
+
+[[outputs]]
+id = "D3Ll60DO0399IAxDXmJzw"
+uri = "file://attached_assets/vehicles/lincoln-aviator.jpg"
+type = "image"
+title = "Lincoln Aviator luxury SUV"
