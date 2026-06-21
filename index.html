@@ -5,16 +5,16 @@
     <script>
       // Restore path encoded by 404.html for GitHub Pages SPA routing
       (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
         var search = location.search;
         if (search && search.indexOf('?/') === 0) {
           var decoded = search.slice(2).replace(/~and~/g, '&');
-          history.replaceState(null, null,
-            location.pathname + decoded + location.hash);
+          // Split path from query params (&first=val → ?first=val)
+          var ampIdx = decoded.indexOf('&');
+          var pathPart = ampIdx === -1 ? decoded : decoded.slice(0, ampIdx);
+          var queryPart = ampIdx === -1 ? '' : '?' + decoded.slice(ampIdx + 1);
+          // Ensure exactly one slash between base and restored path
+          var base = location.pathname.replace(/\/$/, '');
+          history.replaceState(null, null, base + '/' + pathPart + queryPart + location.hash);
         }
       })();
     </script>
@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/clearpath-auto/assets/index-DA-osVmI.js"></script>
+    <script type="module" crossorigin src="/clearpath-auto/assets/index-zDDSx-oC.js"></script>
     <link rel="stylesheet" crossorigin href="/clearpath-auto/assets/index-1Takror5.css">
   </head>
   <body>
